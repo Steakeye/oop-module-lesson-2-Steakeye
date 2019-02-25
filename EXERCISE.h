@@ -11,28 +11,19 @@ public:
 
 // This is for Part 2/3
 class StringLogger: public ILogger {
+    static int version;
     std::ostream& stream;
     std::string lastError;
 
 public:
-    StringLogger(std::ostream& initStream): stream(initStream) {}
+    static int Version();
 
-    ILogger& LogInfo(const std::string& message) override {
-        stream << "INFO: " + message;
+    StringLogger(std::ostream& initStream);
 
-        return *this;
-    }
+    ILogger& LogInfo(const std::string& message) override;
 
-    ILogger& LogError(const std::string& message) {
-        lastError = message;
+    ILogger& LogError(const std::string& message);
 
-        stream << "ERROR: " + message;
-
-        return *this;
-    }
-
-    const std::string& GetLastError() const {
-        return lastError;
-    }
+    const std::string& GetLastError() const;
 };
 

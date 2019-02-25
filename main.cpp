@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include "private/Checker.h"
-#include "EXERCISE.h"
+#include "EXERCISE.cpp"
 
 using namespace std::string_literals;
 using chk = Checker<ILogger>;
